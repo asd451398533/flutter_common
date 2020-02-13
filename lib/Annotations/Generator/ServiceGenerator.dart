@@ -272,7 +272,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
         if(response.request.data is FormData){
           httpLogMap.putIfAbsent("requestDataFields",() => ((response.request.data as FormData).fields.toString()));
         }
-        httpLogMap.putIfAbsent("respondData", () => json.decode (response.data.toString()));
+        httpLogMap.putIfAbsent("respondData", () => json.decode (response.toString()));
         printJson(httpLogMap);
       }
       
