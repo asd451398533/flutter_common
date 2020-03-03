@@ -164,6 +164,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="$ENABLE_FLUTTER_DESKTOP$" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="editor.config.ad.shown" value="$ENABLE_FLUTTER_DESKTOP$" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/commonModel/base" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
