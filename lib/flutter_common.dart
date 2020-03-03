@@ -1,7 +1,6 @@
 library flutter_common;
 
 export 'commonModel/anim/Anim.dart';
-export 'commonModel/base/BaseComponent.dart';
 export 'commonModel/live/BaseModel.dart';
 export 'commonModel/live/LiveData.dart';
 export 'commonModel/picker/base/BaseBottomPicker.dart';
