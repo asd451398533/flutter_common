@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="$ENABLE_FLUTTER_DESKTOP$" id="33d850cd-a2dd-49da-bcaf-e515329da3c6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/commonModel/base/BaseComponent.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_common.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_common.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="$ENABLE_FLUTTER_DESKTOP$" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +16,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="$ENABLE_FLUTTER_DESKTOP$">
         <entry file="file://$PROJECT_DIR$/lib/commonModel/GMBase.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
             <state>
@@ -42,19 +40,26 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/flutter_common.dart">
-          <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor" />
+          <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+            <state relative-caret-position="308">
+              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/commonModel/base/BaseComponent.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+            <state relative-caret-position="1034">
+              <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+              <folding>
+                <element signature="e#46#85#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="$ENABLE_FLUTTER_DESKTOP$">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
             <state relative-caret-position="308">
@@ -71,8 +76,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/commonModel/base/BaseComponent.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/lib/commonModel/base/BaseComponent.dart" />
+        <option value="$PROJECT_DIR$/lib/flutter_common.dart" />
       </list>
     </option>
   </component>
@@ -112,6 +118,49 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="commonModel" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
+              <item name="anim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
+              <item name="picker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
+              <item name="picker" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -120,6 +169,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="$ENABLE_FLUTTER_DESKTOP$" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/commonModel/base" />
@@ -158,10 +208,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="814" extended-state="6" />
-    <editor active="$ENABLE_FLUTTER_DESKTOP$" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.33404863" />
+      <window_info active="$ENABLE_FLUTTER_DESKTOP$" content_ui="combo" id="Project" order="1" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.33404863" />
       <window_info id="Structure" order="2" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -172,11 +221,11 @@
       <window_info anchor="bottom" id="Run" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.3314917" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.33102494" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="$ENABLE_FLUTTER_DESKTOP$" anchor="bottom" id="Messages" order="8" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.32825485" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32825485" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Flutter Inspector" order="2" />
@@ -186,15 +235,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/commonModel/GMBase.dart">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#201#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/Annotations/ServiceGenerator.dart">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
         <state>
@@ -204,13 +244,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flutter_common.dart">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/commonModel/base/BaseComponent.dart">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+        <state relative-caret-position="1034">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+          <folding>
+            <element signature="e#46#85#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -218,6 +258,22 @@
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_common.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/commonModel/GMBase.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#201#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+          </folding>
         </state>
       </provider>
     </entry>
