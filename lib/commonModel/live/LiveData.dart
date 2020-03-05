@@ -18,7 +18,7 @@ class LiveData<T> {
 
   void notifyView(T t) {
     this.data = t;
-    if(!_controller.isClosed) {
+    if (!_controller.isClosed) {
       _controller.sink.add(t);
     }
   }
