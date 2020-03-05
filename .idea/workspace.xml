@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="$ENABLE_FLUTTER_DESKTOP$" id="33d850cd-a2dd-49da-bcaf-e515329da3c6" name="Default Changelist" comment="" />
+    <list default="$ENABLE_FLUTTER_DESKTOP$" id="33d850cd-a2dd-49da-bcaf-e515329da3c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="$ENABLE_FLUTTER_DESKTOP$" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="$ENABLE_FLUTTER_DESKTOP$" />
@@ -14,17 +16,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/Annotations/ServiceGenerator.dart">
-          <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#72#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/flutter_common_test.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
@@ -64,10 +55,15 @@
       <file pinned="false" current-in-tab="$ENABLE_FLUTTER_DESKTOP$">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" selection-start-line="13" selection-start-column="1" selection-end-line="20" selection-end-column="24" />
+            <state relative-caret-position="269">
+              <caret line="19" column="28" lean-forward="$ENABLE_FLUTTER_DESKTOP$" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="https://schemastore.azurewebsites.net/schemas/json/pubspec.json">
+          <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="httpFileEditor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -109,7 +105,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/commonModel/util/JumpUtil.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="396">
               <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
               <folding>
                 <element signature="e#0#675#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
@@ -140,16 +136,18 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="47" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-12" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="812" />
+    <option name="height" value="821" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="$ENABLE_FLUTTER_DESKTOP$" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,7 +175,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -221,11 +218,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="23" width="1440" height="814" extended-state="6" />
+    <frame x="-12" y="23" width="1440" height="821" extended-state="0" />
     <editor active="$ENABLE_FLUTTER_DESKTOP$" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.3390558" />
+      <window_info active="$ENABLE_FLUTTER_DESKTOP$" content_ui="combo" id="Project" order="1" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.35407725" />
       <window_info id="Structure" order="2" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -236,7 +233,7 @@
       <window_info anchor="bottom" id="Run" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info active="$ENABLE_FLUTTER_DESKTOP$" anchor="bottom" id="Terminal" order="4" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.33102494" />
+      <window_info anchor="bottom" id="Terminal" order="4" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.32921812" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -282,6 +279,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/flutter_common.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="https://schemastore.azurewebsites.net/schemas/json/pubspec.json">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="httpFileEditor" />
+    </entry>
     <entry file="file://$USER_HOME$/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-0.5.6+2/android/src/main/java/io/flutter/plugins/sharedpreferences/MethodCallHandlerImpl.java">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -314,7 +321,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/commonModel/util/JumpUtil.dart">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="330">
+        <state relative-caret-position="396">
           <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
           <folding>
             <element signature="e#0#675#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
@@ -322,17 +329,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/flutter_common.dart">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.yaml">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" selection-start-line="13" selection-start-column="1" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="269">
+          <caret line="19" column="28" lean-forward="$ENABLE_FLUTTER_DESKTOP$" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
         </state>
       </provider>
     </entry>
