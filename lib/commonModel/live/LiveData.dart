@@ -9,7 +9,6 @@ class LiveData<T> {
   T data;
 
   LiveData() {
-    print("!!!!  ${_controller == null}");
     this._controller = new StreamController<T>.broadcast();
   }
 
