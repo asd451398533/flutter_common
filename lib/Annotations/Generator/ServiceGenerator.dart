@@ -118,6 +118,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
             }\n
           """);
           }
+
           mapBuffer.write("""
             .flatMap((value){
               if(value!=null&&(value.statusCode>=200&&value.statusCode<300)){
