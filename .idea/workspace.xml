@@ -15,18 +15,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BaseBottomPicker.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="-1366">
+            <state relative-caret-position="924">
               <caret line="46" column="50" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="50" />
               <folding>
                 <element signature="e#0#2965#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
@@ -35,13 +26,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="$ENABLE_FLUTTER_DESKTOP$">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BaseCenterPicker.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="924">
+            <state relative-caret-position="638">
               <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
               <folding>
                 <element signature="e#0#3181#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="$ENABLE_FLUTTER_DESKTOP$">
+        <entry file="file://$PROJECT_DIR$/lib/commonModel/live/LiveData.dart">
+          <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#512#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
               </folding>
             </state>
           </provider>
@@ -61,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/DialogRouter.dart">
           <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-            <state relative-caret-position="-134">
+            <state>
               <folding>
                 <element signature="e#0#442#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
               </folding>
@@ -136,6 +139,7 @@
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/commonModel/picker/base/BaseBottomPicker.dart" />
         <option value="$PROJECT_DIR$/lib/commonModel/picker/base/BaseCenterPicker.dart" />
+        <option value="$PROJECT_DIR$/lib/commonModel/live/LiveData.dart" />
       </list>
     </option>
   </component>
@@ -147,18 +151,16 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-12" />
-    <option name="y" value="23" />
+    <option name="x" value="101" />
+    <option name="y" value="33" />
     <option name="width" value="1440" />
-    <option name="height" value="814" />
+    <option name="height" value="816" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="$ENABLE_FLUTTER_DESKTOP$" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -182,15 +184,7 @@
               <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="commonModel" type="462c0819:PsiDirectoryNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_common" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="commonModel" type="462c0819:PsiDirectoryNode" />
-              <item name="picker" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="live" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flutter_common" type="b2602c69:ProjectViewProjectNode" />
@@ -201,6 +195,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,11 +239,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="23" width="1440" height="814" extended-state="0" />
-    <editor active="$ENABLE_FLUTTER_DESKTOP$" />
+    <frame x="101" y="33" width="1440" height="816" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.3590844" />
+      <window_info content_ui="combo" id="Project" order="1" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.36409155" />
       <window_info id="Structure" order="2" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -258,7 +253,7 @@
       <window_info anchor="bottom" id="Run" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.32825485" />
+      <window_info active="$ENABLE_FLUTTER_DESKTOP$" anchor="bottom" id="Terminal" order="4" visible="$ENABLE_FLUTTER_DESKTOP$" weight="0.32734805" />
       <window_info anchor="bottom" id="Event Log" order="5" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info anchor="bottom" id="Flutter Performance" order="6" side_tool="$ENABLE_FLUTTER_DESKTOP$" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -311,6 +306,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BaseBottomPicker.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="46" column="50" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#2965#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BasePickerComponent.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#1453#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/DialogRouter.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#442#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="https://schemastore.azurewebsites.net/schemas/json/pubspec.json">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="httpFileEditor" />
     </entry>
@@ -354,47 +384,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/DialogRouter.dart">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="-134">
-          <folding>
-            <element signature="e#0#442#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BasePickerComponent.dart">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#1453#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BaseBottomPicker.dart">
-      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="-1366">
-          <caret line="46" column="50" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#2965#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/commonModel/picker/base/BaseCenterPicker.dart">
       <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
-        <state relative-caret-position="924">
+        <state relative-caret-position="638">
           <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
           <folding>
             <element signature="e#0#3181#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/commonModel/live/LiveData.dart">
+      <provider selected="$ENABLE_FLUTTER_DESKTOP$" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#512#0" expanded="$ENABLE_FLUTTER_DESKTOP$" />
           </folding>
         </state>
       </provider>

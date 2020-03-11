@@ -113,7 +113,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           if (!outList.contains(methodElement.returnType.displayName)) {
             outList.add(methodElement.returnType.displayName);
             outBuffer.write("""
-            ${methodElement.returnType.displayName} pase${methodElement.returnType.displayName}(String value){
+            ${methodElement.returnType.displayName} parse${methodElement.returnType.displayName}(String value){
               return ${methodElement.returnType.displayName}.fromJson(json.decode(value));
             }\n
           """);
@@ -121,7 +121,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           mapBuffer.write("""
             .flatMap((value){
               if(value!=null&&(value.statusCode>=200&&value.statusCode<300)){
-                  return Observable.fromFuture(compute(pase${methodElement.returnType.name}, value.toString()));
+                  return Observable.fromFuture(compute(parse${methodElement.returnType.name}, value.toString()));
               }else {
                 return Observable.fromFuture(null);
               }
