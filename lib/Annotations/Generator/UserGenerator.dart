@@ -37,7 +37,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Observable<String> get${fieldData.name}(){
               return Observable.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.fromFuture(Future.value(value.getString("${key}")));
+                  return Observable.just(value.getString("${key}"));
               });
             }
             """);
@@ -51,7 +51,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Observable<int> get${fieldData.name}(){
               return Observable.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.fromFuture(Future.value(value.getInt("${key}")));
+                  return Observable.just(value.getInt("${key}"));
               });
             }
             """);
@@ -65,7 +65,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Observable<double> get${fieldData.name}(){
               return Observable.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.fromFuture(Future.value(value.getDouble("${key}")));
+                  return Observable.just(value.getDouble("${key}"));
               });
             }
             """);
@@ -79,7 +79,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Observable<bool> get${fieldData.name}(){
               return Observable.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.fromFuture(Future.value(value.getBool("${key}")));
+                  return Observable.just(value.getBool("${key}"));
               });
             }
             """);
@@ -92,7 +92,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Observable<List<String>> get${fieldData.name}(){
               return Observable.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.fromFuture(Future.value(value.getStringList("${key}")));
+                  return Observable.just(value.getStringList("${key}"));
               });
             }
             """);
