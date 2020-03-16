@@ -39,7 +39,7 @@ class CustomRoute extends PageRouteBuilder {
               Widget child,
             ) {
               // 渐变效果
-              if (routeWay.index == 2) {
+              if (routeWay.index == 3) {
                 return FadeTransition(
                   // 从0开始到1
                   opacity: Tween(begin: 0.0, end: 1.0).animate(CurvedAnimation(
