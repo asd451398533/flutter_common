@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 enum RouteWay {
   SCARE,
   TRAN_RIGHT_TO_LEFT,
+  TRAN_BOTTOM_TO_TOP,
   ALP,
 }
 
@@ -49,14 +50,22 @@ class CustomRoute extends PageRouteBuilder {
                   )),
                   child: child,
                 );
+              } else if (routeWay.index == 2) {
+                return SlideTransition(
+                  position: Tween<Offset>(
+                          begin: Offset(0.0, 1.0), end: Offset(0.0, 0.0))
+                      .animate(CurvedAnimation(
+                          parent: animaton1, curve: Curves.fastOutSlowIn)),
+                  child: child,
+                );
               } else if (routeWay.index == 1) {
-                  return SlideTransition(
-                    position: Tween<Offset>(
-                            begin: Offset(1.0, 0.0), end: Offset(0.0, 0.0))
-                        .animate(CurvedAnimation(
-                            parent: animaton1, curve: Curves.fastOutSlowIn)),
-                    child: child,
-                  );
+                return SlideTransition(
+                  position: Tween<Offset>(
+                          begin: Offset(1.0, 0.0), end: Offset(0.0, 0.0))
+                      .animate(CurvedAnimation(
+                          parent: animaton1, curve: Curves.fastOutSlowIn)),
+                  child: child,
+                );
 //                } else {
 //                  return SlideTransition(
 //                    position: Tween<Offset>(
