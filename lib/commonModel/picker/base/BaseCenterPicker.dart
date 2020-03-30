@@ -25,8 +25,8 @@ class BaseCenterPicker extends StatefulWidget {
     this.cancelOutSide = cancel;
   }
 
-  show(BuildContext content) {
-    Navigator.push(content, DialogRouter(this));
+  Future show(BuildContext content) {
+    return Navigator.push(content, DialogRouter(this));
   }
 
   @override
