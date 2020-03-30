@@ -75,8 +75,8 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black54,
+    return Material(
+        child: Container(
       width: double.maxFinite,
       height: double.maxFinite,
       child: Stack(
@@ -101,20 +101,17 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
             ),
           ),
           Center(
-              child: Material(
-            color: Colors.transparent,
-            child: StreamBuilder<double>(
-              stream: backLive.stream,
-              initialData: 0,
-              builder: (c, data) {
-                int alp = (data.data * 255).ceil();
-                return widget.picker.build(context, alp);
-              },
-            ),
+              child: StreamBuilder<double>(
+            stream: backLive.stream,
+            initialData: 0,
+            builder: (c, data) {
+              int alp = (data.data * 255).ceil();
+              return widget.picker.build(context, alp);
+            },
           ))
         ],
       ),
-    );
+    ));
   }
 }
 
