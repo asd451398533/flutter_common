@@ -39,6 +39,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
   AnimationController controller;
   VoidCallback dismissCall;
   LiveData<double> backLive = LiveData();
+  bool isDismissing = false;
 
   @override
   void initState() {
@@ -57,6 +58,10 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
       });
     controller.forward();
     widget.picker.initState(() {
+      if (isDismissing) {
+        return;
+      }
+      isDismissing = true;
       controller.reverse();
     });
   }

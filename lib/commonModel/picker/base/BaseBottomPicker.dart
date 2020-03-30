@@ -39,6 +39,7 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
   Animation<Offset> animation;
   AnimationController controller;
   LiveData<Color> backLive = LiveData();
+  bool isDissmissing = false;
 
   @override
   void initState() {
@@ -58,6 +59,10 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
           });
     controller.forward();
     widget.picker.initState(() {
+      if (isDissmissing) {
+        return;
+      }
+      isDissmissing = true;
       controller.reverse();
     });
   }
