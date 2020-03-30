@@ -76,42 +76,43 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
   @override
   Widget build(BuildContext context) {
     return Material(
+        color: Colors.transparent,
         child: Container(
-      width: double.maxFinite,
-      height: double.maxFinite,
-      child: Stack(
-        children: <Widget>[
-          GestureDetector(
-            onTap: () {
-              if (widget.cancelOutSide) {
-                controller.reverse();
-              }
-            },
-            child: StreamBuilder<double>(
-              stream: backLive.stream,
-              initialData: 0,
-              builder: (c, data) {
-                int alp = (data.data * widget.backMaxAlp).floor();
-                return Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  color: Color.fromARGB(alp, 0, 0, 0),
-                );
-              },
-            ),
+          width: double.maxFinite,
+          height: double.maxFinite,
+          child: Stack(
+            children: <Widget>[
+              GestureDetector(
+                onTap: () {
+                  if (widget.cancelOutSide) {
+                    controller.reverse();
+                  }
+                },
+                child: StreamBuilder<double>(
+                  stream: backLive.stream,
+                  initialData: 0,
+                  builder: (c, data) {
+                    int alp = (data.data * widget.backMaxAlp).floor();
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height,
+                      color: Color.fromARGB(alp, 0, 0, 0),
+                    );
+                  },
+                ),
+              ),
+              Center(
+                  child: StreamBuilder<double>(
+                stream: backLive.stream,
+                initialData: 0,
+                builder: (c, data) {
+                  int alp = (data.data * 255).ceil();
+                  return widget.picker.build(context, alp);
+                },
+              ))
+            ],
           ),
-          Center(
-              child: StreamBuilder<double>(
-            stream: backLive.stream,
-            initialData: 0,
-            builder: (c, data) {
-              int alp = (data.data * 255).ceil();
-              return widget.picker.build(context, alp);
-            },
-          ))
-        ],
-      ),
-    ));
+        ));
   }
 }
 
