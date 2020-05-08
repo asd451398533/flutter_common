@@ -375,9 +375,9 @@
     },
     {
       "name": "rxdart",
-      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.22.6",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.flutter-io.cn/rxdart-0.23.1",
       "packageUri": "lib/",
-      "languageVersion": "2.0"
+      "languageVersion": "2.6"
     },
     {
       "name": "shelf",
@@ -518,7 +518,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-05-08T08:33:28.483505Z",
+  "generated": "2020-05-08T08:45:49.821485Z",
   "generator": "pub",
   "generatorVersion": "2.8.1"
 }

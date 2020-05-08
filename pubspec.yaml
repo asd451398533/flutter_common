@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  rxdart: ^0.22.0
+  rxdart: ^0.23.1
   flutter_svg: ^0.17.4
   event_bus: ^1.1.0
   fluttertoast: ^4.0.1
