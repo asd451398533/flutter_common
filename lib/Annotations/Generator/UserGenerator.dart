@@ -37,7 +37,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Stream<String> get${fieldData.name}(){
               return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Stream.just(value.getString("${key}"));
+                  return Stream.value(value.getString("${key}"));
               });
             }
             """);
@@ -51,7 +51,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Stream<int> get${fieldData.name}(){
               return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Stream.just(value.getInt("${key}"));
+                  return Stream.value(value.getInt("${key}"));
               });
             }
             """);
@@ -65,7 +65,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Stream<double> get${fieldData.name}(){
               return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Stream.just(value.getDouble("${key}"));
+                  return Stream.value(value.getDouble("${key}"));
               });
             }
             """);
@@ -79,7 +79,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Stream<bool> get${fieldData.name}(){
               return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Stream.just(value.getBool("${key}"));
+                  return Stream.value(value.getBool("${key}"));
               });
             }
             """);
@@ -92,7 +92,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
             Stream<List<String>> get${fieldData.name}(){
               return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Stream.just(value.getStringList("${key}"));
+                  return Stream.value(value.getStringList("${key}"));
               });
             }
             """);
