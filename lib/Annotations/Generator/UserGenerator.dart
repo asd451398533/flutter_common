@@ -101,6 +101,7 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
       }
     }
 
+
     return """
       import 'package:rxdart/rxdart.dart';
       import 'package:shared_preferences/shared_preferences.dart';
