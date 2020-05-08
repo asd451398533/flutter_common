@@ -94,7 +94,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
             }
           }
           mapBuffer.write("""
-          return Observable.fromFuture(${metadata.type.name.toLowerCase()}(_dio,\'${metadata.getField("sufUrl").toStringValue()}\'
+          return Stream.fromFuture(${metadata.type.name.toLowerCase()}(_dio,\'${metadata.getField("sufUrl").toStringValue()}\'
           """);
           if (uploadBuffer.toString().isNotEmpty) {
             mapBuffer.write(uploadBuffer.toString());
@@ -122,9 +122,9 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           mapBuffer.write("""
             .flatMap((value){
               if(value!=null&&(value.statusCode>=200&&value.statusCode<300)){
-                  return Observable.fromFuture(compute(parse${methodElement.returnType.name}, value.toString()));
+                  return Stream.fromFuture(compute(parse${methodElement.returnType.name}, value.toString()));
               }else {
-                return Observable.fromFuture(null);
+                return Stream.fromFuture(null);
               }
             });
           """);
@@ -138,7 +138,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
 //          """);
 
           methodBuffer.write("""               
-                  Observable<${methodElement.returnType.name}> ${methodElement.name}(Dio _dio,${tempParams == null ? "" : tempParams}){
+                  Stream<${methodElement.returnType.name}> ${methodElement.name}(Dio _dio,${tempParams == null ? "" : tempParams}){
                     ${mapBuffer.toString()}
                   }
                   """);

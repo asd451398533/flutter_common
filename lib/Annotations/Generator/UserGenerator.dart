@@ -34,10 +34,10 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
               SharedPreferences sp=await SharedPreferences.getInstance();
               return sp.setString("${key}", ${fieldData.name});
             }
-            Observable<String> get${fieldData.name}(){
-              return Observable.fromFuture(SharedPreferences.getInstance())
+            Stream<String> get${fieldData.name}(){
+              return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.just(value.getString("${key}"));
+                  return Stream.just(value.getString("${key}"));
               });
             }
             """);
@@ -48,10 +48,10 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
               SharedPreferences sp=await SharedPreferences.getInstance();
               return sp.setInt("${key}", ${fieldData.name});
             }
-            Observable<int> get${fieldData.name}(){
-              return Observable.fromFuture(SharedPreferences.getInstance())
+            Stream<int> get${fieldData.name}(){
+              return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.just(value.getInt("${key}"));
+                  return Stream.just(value.getInt("${key}"));
               });
             }
             """);
@@ -62,10 +62,10 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
               SharedPreferences sp=await SharedPreferences.getInstance();
               return sp.setDouble("${key}", ${fieldData.name});
             }
-            Observable<double> get${fieldData.name}(){
-              return Observable.fromFuture(SharedPreferences.getInstance())
+            Stream<double> get${fieldData.name}(){
+              return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.just(value.getDouble("${key}"));
+                  return Stream.just(value.getDouble("${key}"));
               });
             }
             """);
@@ -76,10 +76,10 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
               SharedPreferences sp=await SharedPreferences.getInstance();
               return sp.setBool("${key}", ${fieldData.name});
             }
-            Observable<bool> get${fieldData.name}(){
-              return Observable.fromFuture(SharedPreferences.getInstance())
+            Stream<bool> get${fieldData.name}(){
+              return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.just(value.getBool("${key}"));
+                  return Stream.just(value.getBool("${key}"));
               });
             }
             """);
@@ -89,10 +89,10 @@ class UserGenerator extends GeneratorForAnnotation<UserCenter> {
               SharedPreferences sp=await SharedPreferences.getInstance();
               return sp.setStringList("${key}", ${fieldData.name});
             }
-            Observable<List<String>> get${fieldData.name}(){
-              return Observable.fromFuture(SharedPreferences.getInstance())
+            Stream<List<String>> get${fieldData.name}(){
+              return Stream.fromFuture(SharedPreferences.getInstance())
                 .flatMap((value) {
-                  return Observable.just(value.getStringList("${key}"));
+                  return Stream.just(value.getStringList("${key}"));
               });
             }
             """);

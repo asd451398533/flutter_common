@@ -10,7 +10,7 @@ import 'package:flutter/services.dart';
 import 'package:rxdart/rxdart.dart';
 
 class IUImageUtil {
-  static Observable<ui.Image> getIUImage(String path, bool isNet) {
+  static Stream<ui.Image> getIUImage(String path, bool isNet) {
     ImageStream stream;
     if (isNet) {
       stream = NetworkImage(
@@ -28,6 +28,6 @@ class IUImageUtil {
     }
 
     stream.addListener(ImageStreamListener(listener));
-    return Observable.fromFuture(completer.future);
+    return Stream.fromFuture(completer.future);
   }
 }
