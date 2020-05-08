@@ -11,7 +11,7 @@ import 'DialogRouter.dart';
 class BaseCenterPicker extends StatefulWidget {
   ICenterPicker picker;
   bool cancelOutSide = true;
-  double backMaxAlp = 255 / 3 - 5;
+  double backMaxAlp = 255 / 2 - 10;
 
   setBackMaxAlp(double max) {
     this.backMaxAlp = max;
