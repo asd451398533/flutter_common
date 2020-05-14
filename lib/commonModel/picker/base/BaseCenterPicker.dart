@@ -12,6 +12,7 @@ class BaseCenterPicker extends StatefulWidget {
   ICenterPicker picker;
   bool cancelOutSide = true;
   double backMaxAlp = 255 / 2 - 10;
+  bool interruptBackEvent = false;
 
   setBackMaxAlp(double max) {
     this.backMaxAlp = max;
@@ -23,6 +24,10 @@ class BaseCenterPicker extends StatefulWidget {
 
   setCancelOutside(bool cancel) {
     this.cancelOutSide = cancel;
+  }
+
+  setInterruptBackEvent(bool set) {
+    interruptBackEvent = set;
   }
 
   Future show(BuildContext content) {
@@ -80,44 +85,55 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-        color: Colors.transparent,
-        child: Container(
-          width: double.maxFinite,
-          height: double.maxFinite,
-          child: Stack(
-            children: <Widget>[
-              GestureDetector(
-                onTap: () {
-                  if (widget.cancelOutSide) {
-                    controller.reverse();
-                  }
-                },
-                child: StreamBuilder<double>(
+    return WillPopScope(
+      child: Material(
+          color: Colors.transparent,
+          child: Container(
+            width: double.maxFinite,
+            height: double.maxFinite,
+            child: Stack(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    if (widget.cancelOutSide) {
+                      controller.reverse();
+                    }
+                  },
+                  child: StreamBuilder<double>(
+                    stream: backLive.stream,
+                    initialData: 0,
+                    builder: (c, data) {
+                      int alp = (data.data * widget.backMaxAlp).floor();
+                      return Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        color: Color.fromARGB(alp, 0, 0, 0),
+                      );
+                    },
+                  ),
+                ),
+                Center(
+                    child: StreamBuilder<double>(
                   stream: backLive.stream,
                   initialData: 0,
                   builder: (c, data) {
-                    int alp = (data.data * widget.backMaxAlp).floor();
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      color: Color.fromARGB(alp, 0, 0, 0),
-                    );
+                    int alp = (data.data * 255).ceil();
+                    return widget.picker.build(context, alp);
                   },
-                ),
-              ),
-              Center(
-                  child: StreamBuilder<double>(
-                stream: backLive.stream,
-                initialData: 0,
-                builder: (c, data) {
-                  int alp = (data.data * 255).ceil();
-                  return widget.picker.build(context, alp);
-                },
-              ))
-            ],
-          ),
-        ));
+                ))
+              ],
+            ),
+          )),
+      onWillPop: () {
+        if(!widget.interruptBackEvent){
+          if (isDismissing) {
+            return;
+          }
+          isDismissing = true;
+          controller.reverse();
+        }
+      },
+    );
   }
 }
 

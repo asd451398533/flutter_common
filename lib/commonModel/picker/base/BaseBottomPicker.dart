@@ -13,6 +13,7 @@ class BaseBottomPicker extends StatefulWidget {
   IBottomPicker picker;
   bool cancelOutSide = true;
   double backMaxAlp = 255 / 2 - 10;
+  bool interruptBackEvent = false;
 
   setPicker(IBottomPicker picker) {
     this.picker = picker;
@@ -24,6 +25,10 @@ class BaseBottomPicker extends StatefulWidget {
 
   setCancelOutside(bool cancel) {
     this.cancelOutSide = cancel;
+  }
+
+  setInterruptBackEvent(bool set) {
+    interruptBackEvent = set;
   }
 
   Future show(BuildContext content) {
@@ -82,38 +87,49 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-        color: Colors.transparent,
-        child: Container(
-          child: Stack(
-            children: <Widget>[
-              GestureDetector(
-                onTap: () {
-                  if (widget.cancelOutSide) {
-                    controller.reverse();
-                  }
-                },
-                child: StreamBuilder<Color>(
-                  stream: backLive.stream,
-                  initialData: Color.fromARGB(0, 0, 0, 0),
-                  builder: (c, data) {
-                    return Container(
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height,
-                      color: data.data,
-                    );
+    return WillPopScope(
+      child: Material(
+          color: Colors.transparent,
+          child: Container(
+            child: Stack(
+              children: <Widget>[
+                GestureDetector(
+                  onTap: () {
+                    if (widget.cancelOutSide) {
+                      controller.reverse();
+                    }
                   },
+                  child: StreamBuilder<Color>(
+                    stream: backLive.stream,
+                    initialData: Color.fromARGB(0, 0, 0, 0),
+                    builder: (c, data) {
+                      return Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height,
+                        color: data.data,
+                      );
+                    },
+                  ),
                 ),
-              ),
-              Positioned(
-                  bottom: 0,
-                  child: SlideTransition(
-                    position: animation,
-                    child: widget.picker.build(context),
-                  ))
-            ],
-          ),
-        ));
+                Positioned(
+                    bottom: 0,
+                    child: SlideTransition(
+                      position: animation,
+                      child: widget.picker.build(context),
+                    ))
+              ],
+            ),
+          )),
+      onWillPop: () {
+        if (!widget.interruptBackEvent) {
+          if (isDissmissing) {
+            return;
+          }
+          isDissmissing = true;
+          controller.reverse();
+        }
+      },
+    );
   }
 }
 
