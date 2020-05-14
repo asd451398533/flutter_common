@@ -50,7 +50,7 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
   void initState() {
     super.initState();
     controller = new AnimationController(
-        duration: const Duration(milliseconds: 200), vsync: this);
+        duration: const Duration(milliseconds: 260), vsync: this);
     controller
       ..addStatusListener((state) {
         if (state == AnimationStatus.dismissed && controller.value == 0) {
