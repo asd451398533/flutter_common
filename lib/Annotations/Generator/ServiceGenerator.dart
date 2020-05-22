@@ -124,7 +124,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
               if(value!=null&&(value.statusCode>=200&&value.statusCode<300)){
                   return Stream.fromFuture(compute(parse${methodElement.returnType.name}, value.toString()));
               }else {
-                return Stream.fromFuture(null);
+                throw Exception("--未知网络错误--");
               }
             });
           """);
