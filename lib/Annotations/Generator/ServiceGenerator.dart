@@ -192,6 +192,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           _printHttpLog(response);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
+          throw e;
         }
         return response;
       }
@@ -206,6 +207,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           _printHttpLog(response);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
+          throw e;
         }
         return response;
       }
@@ -218,6 +220,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           _printHttpLog(response);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
+          throw e;
         }
         return response;
       }
@@ -230,6 +233,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           _printHttpLog(response);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
+          throw e;
         }
         return response;
       }
@@ -249,6 +253,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
           _printHttpLog(response);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
+          throw e;
         }
         return response;
       }
