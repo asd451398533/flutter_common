@@ -11,7 +11,7 @@ class NativeToast {
 
   static void showNativeToastWithTime(String text, bool long) {
     Fluttertoast.showToast(
-        msg: "This is Center Short Toast",
+        msg: text,
         toastLength: long ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,
