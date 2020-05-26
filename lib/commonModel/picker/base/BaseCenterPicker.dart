@@ -68,7 +68,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
       }
       isDismissing = true;
       controller.reverse();
-    });
+    }, context);
   }
 
   void backAnim(double dy) {
@@ -125,7 +125,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
             ),
           )),
       onWillPop: () {
-        if(!widget.interruptBackEvent){
+        if (!widget.interruptBackEvent) {
           if (isDismissing) {
             return;
           }
@@ -138,7 +138,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
 }
 
 abstract class ICenterPicker {
-  void initState(VoidCallback dismissCall);
+  void initState(VoidCallback dismissCall, BuildContext context);
 
   Widget build(BuildContext context, int alp);
 

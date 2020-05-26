@@ -69,7 +69,7 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
       }
       isDissmissing = true;
       controller.reverse();
-    });
+    }, context);
   }
 
   void backAnim(double dy) {
@@ -134,7 +134,7 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
 }
 
 abstract class IBottomPicker {
-  void initState(VoidCallback dismissCall);
+  void initState(VoidCallback dismissCall, BuildContext context);
 
   Widget build(BuildContext context);
 

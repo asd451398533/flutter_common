@@ -56,7 +56,7 @@ class BaseLoadingItem implements ICenterPicker {
   }
 
   @override
-  void initState(VoidCallback dismissCall) {
+  void initState(VoidCallback dismissCall,BuildContext context) {
   }
 
 }
