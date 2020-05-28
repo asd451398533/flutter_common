@@ -10,6 +10,9 @@ class NativeToast {
   }
 
   static void showNativeToastWithTime(String text, bool long) {
+    if (text == null) {
+      text = "null";
+    }
     Fluttertoast.showToast(
         msg: text,
         toastLength: long ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT,
