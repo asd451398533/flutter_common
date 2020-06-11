@@ -2,6 +2,7 @@
  * @author lsy
  * @date   2020/5/8
  **/
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class NativeToast {
@@ -12,7 +13,7 @@ class NativeToast {
   }
 
   static void showNativeToastNotFast(String text) {
-    if(DateTime.now().millisecondsSinceEpoch-lastTime>2000){
+    if (DateTime.now().millisecondsSinceEpoch - lastTime > 2000) {
       showNativeToastWithTime(text, false);
     }
   }
@@ -26,6 +27,8 @@ class NativeToast {
         toastLength: long ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,
+        backgroundColor: Colors.white,
+        textColor: Colors.black,
         fontSize: 16.0);
   }
 }
