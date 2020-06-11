@@ -5,8 +5,16 @@
 import 'package:fluttertoast/fluttertoast.dart';
 
 class NativeToast {
+  static int lastTime = DateTime.now().millisecondsSinceEpoch;
+
   static void showNativeToast(String text) {
     showNativeToastWithTime(text, false);
+  }
+
+  static void showNativeToastNotFast(String text) {
+    if(DateTime.now().millisecondsSinceEpoch-lastTime>2000){
+      showNativeToastWithTime(text, false);
+    }
   }
 
   static void showNativeToastWithTime(String text, bool long) {
