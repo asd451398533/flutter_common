@@ -30,8 +30,8 @@ class NativeToast {
         toastLength: long ? Toast.LENGTH_LONG : Toast.LENGTH_SHORT,
         gravity: ToastGravity.CENTER,
         timeInSecForIosWeb: 1,
-        backgroundColor: Color(0xcc1D2530),
+        backgroundColor: Color(0xcc000000),
         textColor: Colors.white,
-        fontSize: 16.0);
+        fontSize: 15.0);
   }
 }

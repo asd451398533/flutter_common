@@ -4,7 +4,6 @@
     <list default="$ENABLE_FLUTTER_DESKTOP$" id="33d850cd-a2dd-49da-bcaf-e515329da3c6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="$ENABLE_FLUTTER_DESKTOP$" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="$ENABLE_FLUTTER_DESKTOP$" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +31,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1YxsLiGDeDSQau6KYNXH6GFeLIW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="$ENABLE_FLUTTER_DESKTOP$" />
+    <option name="showExcludedFiles" value="$ENABLE_FLUTTER_DESKTOP$" />
+    <option name="showLibraryContents" value="$ENABLE_FLUTTER_DESKTOP$" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="$ENABLE_FLUTTER_DESKTOP$" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
@@ -49,18 +53,6 @@
       <recent name="$PROJECT_DIR$/lib/commonModel/toast" />
       <recent name="$PROJECT_DIR$/lib/commonModel/base" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
