@@ -5,7 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class NativeToast {
+class NativeToastUtil {
   static int lastTime;
   static String lastWorld;
 
