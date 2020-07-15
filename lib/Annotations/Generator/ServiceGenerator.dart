@@ -156,9 +156,23 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
     import 'package:dio/dio.dart';\n
     import 'package:flutter/foundation.dart';\n
     ${improtBuffer.toString()}
-    const bool inProduction = const bool.fromEnvironment("dart.vm.product");
     class ${element.displayName}Impl{
       
+        bool inProduction = false;
+        StringBuffer traceBuffer = new StringBuffer();
+        
+        void setIsRelease(bool isRelease){
+          this.inProduction=isRelease;
+        }
+        
+        String getTraceBuffer(){
+          return traceBuffer.toString();
+        }
+        
+        void clearTrace(){
+            traceBuffer.clear();
+        }
+        
         static JsonEncoder encoder = JsonEncoder.withIndent('  ');
         
         static ${element.displayName}Impl _instance;
@@ -187,9 +201,10 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
       Future<Response> get(Dio _dio,url, {data, options, cancelToken}) async {
         Response response;
         try {
+          int startTime = DateTime.now().millisecondsSinceEpoch;
           response = await _dio.get(url,
             queryParameters: data, options: options, cancelToken: cancelToken);
-          _printHttpLog(response);
+          _printHttpLog(response, DateTime.now().millisecondsSinceEpoch - startTime);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
           throw e;
@@ -200,11 +215,12 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
       Future<Response> post(Dio _dio,url, {data, options, cancelToken}) async {
         Response response;
         try {
+          int startTime = DateTime.now().millisecondsSinceEpoch;
           response = await _dio.post(url,
               data: FormData.fromMap(data),
               options: options,
               cancelToken: cancelToken);
-          _printHttpLog(response);
+          _printHttpLog(response, DateTime.now().millisecondsSinceEpoch - startTime);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
           throw e;
@@ -215,9 +231,10 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
       Future<Response> put(Dio _dio,url, {data, options, cancelToken}) async {
         Response response;
         try {
+          int startTime = DateTime.now().millisecondsSinceEpoch;
           response = await _dio.put(url,
               data: FormData.fromMap(data), options: options, cancelToken: cancelToken);
-          _printHttpLog(response);
+          _printHttpLog(response, DateTime.now().millisecondsSinceEpoch - startTime);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
           throw e;
@@ -228,9 +245,10 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
       Future<Response> delete(Dio _dio,url, {data, options, cancelToken}) async {
         Response response;
         try {
+          int startTime = DateTime.now().millisecondsSinceEpoch;
           response = await _dio.delete(url,
               data: FormData.fromMap(data), options: options, cancelToken: cancelToken);
-          _printHttpLog(response);
+          _printHttpLog(response, DateTime.now().millisecondsSinceEpoch - startTime);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
           throw e;
@@ -248,9 +266,10 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
         }
         data.putIfAbsent(key, () => file);
         try {
+          int startTime = DateTime.now().millisecondsSinceEpoch;
           response = await _dio.post(url,
               data: FormData.fromMap(data), options: options, cancelToken: cancelToken);
-          _printHttpLog(response);
+          _printHttpLog(response, DateTime.now().millisecondsSinceEpoch - startTime);
         } on DioError catch (e) {
           print('get error---------\$e  \${formatError(e)}');
           throw e;
@@ -258,7 +277,10 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
         return response;
       }
             
-      void _printHttpLog(Response response) {
+      void _printHttpLog(Response response, int useTime) {
+        if(response!=null){
+          traceBuffer.write("gmTraceStart-> method:\${response.request.method} uri:\${response.request.uri} heads:\${response.request.headers.toString()} params:\${response.request.queryParameters} datas:\${response.request.queryParameters.toString()} respondData:\${response.toString()} useTime:\${useTime} <-gmTraceEnd @@");
+        }
         if(!inProduction){
           try {
             printRespond(response);
