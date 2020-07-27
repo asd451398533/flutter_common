@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="$ENABLE_FLUTTER_DESKTOP$" id="33d850cd-a2dd-49da-bcaf-e515329da3c6" name="Default Changelist" comment="" />
+    <list default="$ENABLE_FLUTTER_DESKTOP$" id="33d850cd-a2dd-49da-bcaf-e515329da3c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="$ENABLE_FLUTTER_DESKTOP$" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

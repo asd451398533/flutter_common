@@ -278,11 +278,11 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
       }
             
       void _printHttpLog(Response response, int useTime) {
-        if(response!=null){
-          traceBuffer.write("gmTraceStart-> useTime:\${useTime} method:\${response.request.method} uri:\${response.request.uri} heads:\${response.request.headers.toString()} params:\${response.request.queryParameters} datas:\${response.request.queryParameters.toString()} respondData:\${response.toString()} <-gmTraceEnd @@");
-        }
         if(!inProduction){
           try {
+            if(response!=null){
+              traceBuffer.write("gmTraceStart-> useTime:\${useTime} method:\${response.request.method} uri:\${response.request.uri} heads:\${response.request.headers.toString()} params:\${response.request.queryParameters} datas:\${response.request.queryParameters.toString()} respondData:\${response.toString()} <-gmTraceEnd @@");
+            }
             printRespond(response);
           } catch (ex) {
             print("Http Log" + " error......");
