@@ -14,6 +14,7 @@ class BaseBottomPicker extends StatefulWidget {
   bool cancelOutSide = true;
   double backMaxAlp = 255 / 2 - 10;
   bool interruptBackEvent = false;
+  Function(AnimationStatus status) animListener;
 
   setPicker(IBottomPicker picker) {
     this.picker = picker;
@@ -29,6 +30,10 @@ class BaseBottomPicker extends StatefulWidget {
 
   setInterruptBackEvent(bool set) {
     interruptBackEvent = set;
+  }
+
+  setAnimStateListener(Function(AnimationStatus status) animListener) {
+    this.animListener = animListener;
   }
 
   Future show(BuildContext content) {
@@ -53,6 +58,9 @@ class BaseBottomPickerState extends State<BaseBottomPicker>
         duration: const Duration(milliseconds: 260), vsync: this);
     controller
       ..addStatusListener((state) {
+        if (widget.animListener != null) {
+          widget.animListener(state);
+        }
         if (state == AnimationStatus.dismissed && controller.value == 0) {
           Navigator.pop(context);
         }
