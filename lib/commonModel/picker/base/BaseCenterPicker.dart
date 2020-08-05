@@ -13,10 +13,16 @@ class BaseCenterPicker extends StatefulWidget {
   bool cancelOutSide = true;
   double backMaxAlp = 255 / 2 - 10;
   bool interruptBackEvent = false;
+  Function(AnimationStatus status) animListener;
 
   setBackMaxAlp(double max) {
     this.backMaxAlp = max;
   }
+
+  setAnimStateListener(Function(AnimationStatus status) animListener) {
+    this.animListener = animListener;
+  }
+
 
   setPicker(ICenterPicker picker) {
     this.picker = picker;
@@ -53,6 +59,9 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
         duration: const Duration(milliseconds: 260), vsync: this);
     controller
       ..addStatusListener((state) {
+        if (widget.animListener != null) {
+          widget.animListener(state);
+        }
         if (state == AnimationStatus.dismissed && controller.value == 0) {
           Navigator.pop(context);
         }
