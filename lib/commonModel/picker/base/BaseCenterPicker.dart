@@ -67,6 +67,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
           if (_baseCenterNotify.iCenterPicker != null) {
             widget.picker.dispose();
             widget.picker = _baseCenterNotify.iCenterPicker;
+            isDismissing = false;
             _baseCenterNotify.iCenterPicker
                 .initState(_baseCenterNotify, context);
             controller.forward();
