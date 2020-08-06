@@ -1,30 +1,33 @@
 /*
  * @author lsy
- * @date   2019-10-18
+ * @date   2020/8/6
  **/
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/commonModel/live/LiveData.dart';
-import 'package:flutter_common/commonModel/picker/base/BaseCenterNotify.dart';
+import 'package:flutter_common/commonModel/picker/base/IPicker.dart';
 
+import 'BasePickerNotify.dart';
 import 'DialogRouter.dart';
+import 'IBottomPicker.dart';
+import 'ICenterPicker.dart';
 
-class BaseCenterPicker extends StatefulWidget {
-  ICenterPicker picker;
+class BasePicker extends StatefulWidget {
+  IPicker picker;
   bool cancelOutSide = true;
   double backMaxAlp = 255 / 2 - 10;
   bool interruptBackEvent = false;
-  Function(AnimationStatus status) animListener;
+  int during = 260;
 
   setBackMaxAlp(double max) {
     this.backMaxAlp = max;
   }
 
-  setAnimStateListener(Function(AnimationStatus status) animListener) {
-    this.animListener = animListener;
+  setDuring(int during) {
+    this.during = during;
   }
 
-  setPicker(ICenterPicker picker) {
+  setPicker(IPicker picker) {
     this.picker = picker;
   }
 
@@ -44,42 +47,39 @@ class BaseCenterPicker extends StatefulWidget {
   State<StatefulWidget> createState() => BaseCenterPickerState();
 }
 
-class BaseCenterPickerState extends State<BaseCenterPicker>
+class BaseCenterPickerState extends State<BasePicker>
     with SingleTickerProviderStateMixin {
-  Animation<double> animation;
+  Animation<Offset> animation;
   AnimationController controller;
   LiveData<double> backLive = LiveData();
   bool isDismissing = false;
-  Function(ICenterPicker iCenterPicker) showOtherPicker;
-  BaseCenterNotify _baseCenterNotify = new BaseCenterNotify();
+  Function(IPicker iCenterPicker) showOtherPicker;
+  BasePickerNotify _baseCenterNotify = new BasePickerNotify();
 
   @override
   void initState() {
     super.initState();
     controller = new AnimationController(
-        duration: const Duration(milliseconds: 260), vsync: this);
+        duration: Duration(milliseconds: widget.during), vsync: this);
     controller
       ..addStatusListener((state) {
-        if (widget.animListener != null) {
-          widget.animListener(state);
-        }
         if (state == AnimationStatus.dismissed && controller.value == 0) {
-          if (_baseCenterNotify.iCenterPicker != null) {
+          if (_baseCenterNotify.iPicker != null) {
             widget.picker.dispose();
-            widget.picker = _baseCenterNotify.iCenterPicker;
+            widget.picker = _baseCenterNotify.iPicker;
             isDismissing = false;
-            _baseCenterNotify.iCenterPicker
-                .initState(_baseCenterNotify, context);
+            _baseCenterNotify.iPicker.initState(_baseCenterNotify, context);
             controller.forward();
           } else {
             Navigator.pop(context);
           }
         }
       });
-    animation = new Tween(begin: 0.0, end: 1.0).animate(controller)
-      ..addListener(() {
-        backAnim(animation.value.abs());
-      });
+    animation =
+        new Tween(begin: Offset(0, 1), end: Offset(0, 0)).animate(controller)
+          ..addListener(() {
+            backAnim(1 - animation.value.dy.abs());
+          });
     controller.forward();
     if (!_baseCenterNotify.hasListeners) {
       _baseCenterNotify.addListener(() {
@@ -119,7 +119,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
                 GestureDetector(
                   onTap: () {
                     if (widget.cancelOutSide) {
-                      _baseCenterNotify.iCenterPicker = null;
+                      _baseCenterNotify.iPicker = null;
                       controller.reverse();
                     }
                   },
@@ -136,21 +136,30 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
                     },
                   ),
                 ),
-                Center(
-                    child: StreamBuilder<double>(
-                  stream: backLive.stream,
-                  initialData: 0,
-                  builder: (c, data) {
-                    int alp = (data.data * 255).ceil();
-                    return widget.picker.build(context, alp);
-                  },
-                ))
+                widget.picker is IBottomPicker
+                    ? Positioned(
+                        bottom: 0,
+                        child: SlideTransition(
+                          position: animation,
+                          child:
+                              (widget.picker as IBottomPicker).build(context),
+                        ))
+                    : Center(
+                        child: StreamBuilder<double>(
+                        stream: backLive.stream,
+                        initialData: 0,
+                        builder: (c, data) {
+                          int alp = (data.data * 255).ceil();
+                          return (widget.picker as ICenterPicker)
+                              .build(context, alp);
+                        },
+                      ))
               ],
             ),
           )),
       onWillPop: () {
         if (!widget.interruptBackEvent) {
-          _baseCenterNotify.iCenterPicker = null;
+          _baseCenterNotify.iPicker = null;
           if (isDismissing) {
             return;
           }
@@ -160,12 +169,4 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
       },
     );
   }
-}
-
-abstract class ICenterPicker {
-  void initState(BaseCenterNotify nextListener, BuildContext context);
-
-  Widget build(BuildContext context, int alp);
-
-  void dispose();
 }
