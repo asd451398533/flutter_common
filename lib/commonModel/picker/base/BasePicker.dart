@@ -69,6 +69,7 @@ class BaseCenterPickerState extends State<BasePicker>
             widget.picker = _baseCenterNotify.iPicker;
             isDismissing = false;
             _baseCenterNotify.iPicker.initState(_baseCenterNotify, context);
+            setState(() {});
             controller.forward();
           } else {
             Navigator.pop(context);
