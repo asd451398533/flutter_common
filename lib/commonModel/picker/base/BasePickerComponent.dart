@@ -4,6 +4,7 @@
  **/
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_common/commonModel/picker/base/BaseCenterNotify.dart';
 
 import 'BaseCenterPicker.dart';
 
@@ -13,7 +14,7 @@ class BaseLoadingItem implements ICenterPicker {
   BaseLoadingItem(this.loadingText);
 
   @override
-  Widget build(BuildContext context,int alp) {
+  Widget build(BuildContext context, int alp) {
     return Center(
       ///弹框大小
       child: new Container(
@@ -40,8 +41,7 @@ class BaseLoadingItem implements ICenterPicker {
                 ),
                 child: new Text(
                   loadingText,
-                  style: new TextStyle(fontSize: 16.0
-                   ),
+                  style: new TextStyle(fontSize: 16.0),
                 ),
               ),
             ],
@@ -52,11 +52,8 @@ class BaseLoadingItem implements ICenterPicker {
   }
 
   @override
-  void dispose() {
-  }
+  void dispose() {}
 
   @override
-  void initState(VoidCallback dismissCall,BuildContext context) {
-  }
-
+  void initState(BaseCenterNotify dismissCall, BuildContext context) {}
 }

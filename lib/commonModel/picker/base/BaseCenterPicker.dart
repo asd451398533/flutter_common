@@ -5,6 +5,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/commonModel/live/LiveData.dart';
+import 'package:flutter_common/commonModel/picker/base/BaseCenterNotify.dart';
 
 import 'DialogRouter.dart';
 
@@ -22,7 +23,6 @@ class BaseCenterPicker extends StatefulWidget {
   setAnimStateListener(Function(AnimationStatus status) animListener) {
     this.animListener = animListener;
   }
-
 
   setPicker(ICenterPicker picker) {
     this.picker = picker;
@@ -48,9 +48,10 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
     with SingleTickerProviderStateMixin {
   Animation<double> animation;
   AnimationController controller;
-  VoidCallback dismissCall;
   LiveData<double> backLive = LiveData();
   bool isDismissing = false;
+  Function(ICenterPicker iCenterPicker) showOtherPicker;
+  BaseCenterNotify _baseCenterNotify = new BaseCenterNotify();
 
   @override
   void initState() {
@@ -63,7 +64,15 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
           widget.animListener(state);
         }
         if (state == AnimationStatus.dismissed && controller.value == 0) {
-          Navigator.pop(context);
+          if (_baseCenterNotify.iCenterPicker != null) {
+            widget.picker.dispose();
+            widget.picker = _baseCenterNotify.iCenterPicker;
+            _baseCenterNotify.iCenterPicker
+                .initState(_baseCenterNotify, context);
+            controller.forward();
+          } else {
+            Navigator.pop(context);
+          }
         }
       });
     animation = new Tween(begin: 0.0, end: 1.0).animate(controller)
@@ -71,13 +80,16 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
         backAnim(animation.value.abs());
       });
     controller.forward();
-    widget.picker.initState(() {
-      if (isDismissing) {
-        return;
-      }
-      isDismissing = true;
-      controller.reverse();
-    }, context);
+    if (!_baseCenterNotify.hasListeners) {
+      _baseCenterNotify.addListener(() {
+        if (isDismissing) {
+          return;
+        }
+        isDismissing = true;
+        controller.reverse();
+      });
+    }
+    widget.picker.initState(_baseCenterNotify, context);
   }
 
   void backAnim(double dy) {
@@ -89,6 +101,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
     controller.dispose();
     backLive.dispost();
     widget.picker.dispose();
+    _baseCenterNotify.dispose();
     super.dispose();
   }
 
@@ -147,7 +160,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
 }
 
 abstract class ICenterPicker {
-  void initState(VoidCallback dismissCall, BuildContext context);
+  void initState(BaseCenterNotify nextListener, BuildContext context);
 
   Widget build(BuildContext context, int alp);
 
