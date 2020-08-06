@@ -118,6 +118,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
                 GestureDetector(
                   onTap: () {
                     if (widget.cancelOutSide) {
+                      _baseCenterNotify.iCenterPicker = null;
                       controller.reverse();
                     }
                   },
@@ -148,6 +149,7 @@ class BaseCenterPickerState extends State<BaseCenterPicker>
           )),
       onWillPop: () {
         if (!widget.interruptBackEvent) {
+          _baseCenterNotify.iCenterPicker = null;
           if (isDismissing) {
             return;
           }
