@@ -53,7 +53,6 @@ class BaseCenterPickerState extends State<BasePicker>
   AnimationController controller;
   LiveData<double> backLive = LiveData();
   bool isDismissing = false;
-  Function(IPicker iCenterPicker) showOtherPicker;
   BasePickerNotify _baseCenterNotify = new BasePickerNotify();
 
   @override
