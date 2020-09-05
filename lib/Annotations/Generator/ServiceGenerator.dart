@@ -217,7 +217,7 @@ class ServiceGenerator extends GeneratorForAnnotation<ServiceCenter> {
         try {
           int startTime = DateTime.now().millisecondsSinceEpoch;
           response = await _dio.post(url,
-              data: FormData.fromMap(data),
+              data: data,
               options: options,
               cancelToken: cancelToken);
           _printHttpLog(response, DateTime.now().millisecondsSinceEpoch - startTime);
